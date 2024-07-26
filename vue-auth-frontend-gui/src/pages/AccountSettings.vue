@@ -25,15 +25,27 @@ export default {
       language: "",
       translationLanguage: "",
 
+      newUsername: "",
+      newFirstName: "",
+      newLastName: "",
+      newEmail: "",
+      newBirthdate: "",
+      newPhone: "",
+      newCountry: "",
+      newLanguage: "",
+      newTranslationLanguage: "",
+
       message: "",
     };
   },
-  created() {
-    this.usergetAccountData();
+  computed: {
+    ...mapGetters(["getUser", "getToken"]),
+  },
+  mounted() {
+    this.userAccountData();
   },
   methods: {
-    ...mapActions(["getAccountData", "accountUpdate"]),
-    ...mapGetters(["getUser,getToken"]),
+    ...mapActions(["accountData", "accountUpdate"]),
 
     async userProfileUpdate() {
       try {
@@ -49,19 +61,21 @@ export default {
           translationLanguage: this.translationLanguage,
         });
         if (res.status == 200) this.$router.push("/profile");
-        this.message = res.message;
+        this.message = res.data.message;
       } catch (error) {
-        console.error("Registration error:", error); // * debug
+        //console.error("Registration error:", error); // * debug
         this.message = "Server error, please try later.";
       }
     },
 
-    async usergetAccountData() {
+    async userAccountData() {
       try {
-        const res = await this.getAccountData({
-          username: getUser,
-          token: getToken,
+        const res = await this.accountData({
+          username: this.getUser,
+          token: this.getToken,
         });
+        if (res.message != undefined) this.message = res.data.message;
+
         this.username = res.data.username;
         this.firstName = res.data.firstName;
         this.lastName = res.data.lastName;
@@ -96,47 +110,65 @@ export default {
       <componentInputText
         :textName="'User Name'"
         :idName="'username'"
+        :required="false"
         :placeholder="username"
+        v-model:valueData="newUsername"
       />
       <componentInputText
         :textName="'First Name'"
         :idName="'firstName'"
+        :required="false"
         :placeholder="firstName"
+        v-model:valueData="newFirstName"
       />
       <componentInputText
         :textName="'Last Name'"
         :idName="'lastName'"
+        :required="false"
         :placeholder="lastName"
+        v-model:valueData="newLastName"
       />
       <componentInputEmail
         :textName="'Email'"
         :idName="'email'"
+        :required="false"
         :placeholder="email"
+        v-model:valueData="newEmail"
       />
       <componentInputDate
         :textName="'Birthdate'"
         :idName="'birthdate'"
+        :required="false"
         :placeholder="birthdate"
+        v-model:valueData="newBirthdate"
       />
       <componentInputTel
         :textName="'Phone'"
         :idName="'phone'"
+        :required="false"
         :placeholder="phone"
+        v-model:valueData="newPhone"
       />
       <componentInputText
         :textName="'Country'"
         :idName="'country'"
+        :required="false"
         :placeholder="country"
+        v-model:valueData="newCountry"
       />
       <componentInputText
         :textName="'Language'"
         :idName="'language'"
+        :required="false"
         :placeholder="language"
+        v-model:valueData="newLanguage"
       />
       <componentInputText
         :textName="'Translation Language'"
         :idName="'translationLanguage'"
+        :required="false"
         :placeholder="translationLanguage"
+        v-model:valueData="newTranslationLanguage"
       />
       <div class="flex flex-row gap-3 justify-around mt-4 items-center">
         <span>

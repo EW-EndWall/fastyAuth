@@ -24,20 +24,32 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getUser,getToken"]),
+    ...mapGetters(["getUser", "getToken"]),
   },
-  created() {
-    this.usergetAccountData();
+  mounted() {
+    this.userAccountData();
   },
   methods: {
-    ...mapActions(["getAccountData"]),
-    async usergetAccountData() {
+    ...mapActions(["accountData"]),
+
+    async userAccountData() {
       try {
-        const res = await this.getAccountData({
-          username: getUser,
-          token: getToken,
+        const res = await this.accountData({
+          username: this.getUser,
+          token: this.getToken,
         });
-        this.message = res.message;
+
+        if (res.status != 200) return (this.message = res.data.message);
+
+        this.username = res.data.username;
+        this.firstName = res.data.firstName;
+        this.lastName = res.data.lastName;
+        this.email = res.data.email;
+        this.birthdate = res.data.birthdate;
+        this.phone = res.data.phone;
+        this.country = res.data.country;
+        this.language = res.data.language;
+        this.translationLanguage = res.data.translationLanguage;
       } catch (error) {
         //console.error("Login error:", error); // * debug
         this.message = "Server error, please try later.";

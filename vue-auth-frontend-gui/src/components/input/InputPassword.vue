@@ -4,6 +4,16 @@ export default {
   props: {
     textName: String,
     idName: String,
+    required: {
+      type: Boolean,
+      default: false,
+    },
+    valueData: String,
+  },
+  methods: {
+    updateInput() {
+      this.$emit("update:valueData", this.$refs.inputField.value);
+    },
   },
 };
 </script>
@@ -18,8 +28,10 @@ export default {
       :id="idName"
       type="password"
       :v-model="idName"
-      required
+      :required="required"
       placeholder="**********"
+      ref="inputField"
+      @input="updateInput"
     />
   </div>
 </template>

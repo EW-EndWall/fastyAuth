@@ -7,7 +7,7 @@ import componentInputTel from "../components/input/InputTel.vue";
 </script>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   name: "PasswordSettings",
@@ -38,7 +38,7 @@ export default {
         }
 
         if (res.status == 200) this.$router.push("/");
-        this.message = res.message;
+        this.message = res.data.message;
       } catch (error) {
         // console.error("Registration error:", error); // * debug
         this.message = "Server error, please try later.";
@@ -77,14 +77,18 @@ export default {
         <componentInputEmail
           :textName="'Email'"
           :idName="'email'"
+          :required="true"
           :placeholder="'name@example.com'"
+          v-model:valueData="email"
         />
       </div>
       <div v-else-if="isResetType == 'phone'">
         <componentInputTel
           :textName="'Phone'"
           :idName="'phone'"
+          :required="true"
           :placeholder="'1 (234) 567-890'"
+          v-model:valueData="phone"
         />
       </div>
       <div class="flex flex-row gap-3 justify-around mt-4 items-center">

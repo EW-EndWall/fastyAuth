@@ -8,7 +8,7 @@ import componentInputPassword from "../components/input/InputPassword.vue";
 </script>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   name: "Login",
@@ -28,7 +28,7 @@ export default {
           username: this.username,
           password: this.password,
         });
-        if (res.status == 200) this.$router.push("/profile");
+        if (res.status == 200) this.$router.push("/account");
         this.message = res.message;
       } catch (error) {
         //console.error("Login error:", error); // * debug
@@ -66,9 +66,16 @@ export default {
           <componentInputText
             :textName="'User Name'"
             :idName="'username'"
+            :required="true"
             :placeholder="'Name'"
+            v-model:valueData="username"
           />
-          <componentInputPassword :textName="'Password'" :idName="'password'" />
+          <componentInputPassword
+            :textName="'Password'"
+            :idName="'password'"
+            :required="true"
+            v-model:valueData="password"
+          />
 
           <div class="flex flex-row gap-3 justify-around mt-4 items-center">
             <span>

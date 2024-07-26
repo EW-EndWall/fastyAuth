@@ -5,6 +5,16 @@ export default {
     textName: String,
     idName: String,
     placeholder: String,
+    required: {
+      type: Boolean,
+      default: false,
+    },
+    valueData: String,
+  },
+  methods: {
+    updateInput() {
+      this.$emit("update:valueData", this.$refs.inputField.value);
+    },
   },
 };
 </script>
@@ -19,8 +29,10 @@ export default {
       :id="idName"
       type="email"
       :v-model="idName"
-      required
+      :required="required"
       :placeholder="placeholder"
+      ref="inputField"
+      @input="updateInput"
     />
   </div>
 </template>

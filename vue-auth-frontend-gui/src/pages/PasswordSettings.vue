@@ -30,7 +30,7 @@ export default {
           newPassword: this.newPassword,
         });
         if (res.status == 200) this.$router.push("/profile");
-        this.message = res.message;
+        this.message = res.data.message;
       } catch (error) {
         //console.error("Login error:", error); // * debug
         this.message = "Server error, please try later.";
@@ -54,10 +54,17 @@ export default {
       @submit.prevent="userPasswordEdit"
       class="flex flex-col w-3/4 mx-auto gap-3"
     >
-      <componentInputPassword :textName="'Password'" :idName="'password'" />
+      <componentInputPassword
+        :textName="'Password'"
+        :idName="'password'"
+        :required="true"
+        v-model:valueData="password"
+      />
       <componentInputPassword
         :textName="'New Password'"
         :idName="'newPassword'"
+        :required="true"
+        v-model:valueData="newPassword"
       />
 
       <componentButton :textName="'Save'" />

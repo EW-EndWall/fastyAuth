@@ -1,12 +1,7 @@
 import { createStore } from "vuex";
-import axios from "axios";
 
-const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
+import router from "./../router";
+import apiClient from "./../api/axios";
 
 const store = createStore({
   state: {
@@ -36,12 +31,12 @@ const store = createStore({
         const data = response.data;
         commit("setUser", data.user);
         commit("setToken", data.token);
-        apiClient.defaults.headers.common[
-          "Authorization"
-        ] = `Bearer ${data.token}`;
+        apiClient.defaults.headers.common["authorization"] = `${data.token}`;
         return {
           status: data.status,
-          message: data.message,
+          data: {
+            message: data.message,
+          },
         };
       } catch (error) {
         // console.error("Login failed:", error); // * debug
@@ -53,47 +48,11 @@ const store = createStore({
     },
     async logout({ commit }) {
       commit("logout");
+      router.push("/");
     },
     async register({}, userData) {
       try {
-        const response = await apiClient.post("/auth/register", userData);
-        const data = response.data;
-        return {
-          status: data.status,
-          message: data.message,
-        };
-      } catch (error) {
-        // console.error("Registration failed:", error); // * debug
-        return {
-          status: error.response.status,
-          message: error.response.data.message,
-        };
-      }
-    },
-    async getAccountData({}, userData) {
-      try {
-        const response = await apiClient.get("/account", userData);
-        const data = response.data;
-        return {
-          status: data.status,
-          message: data.message,
-        };
-      } catch (error) {
-        // console.error("Registration failed:", error); // * debug
-        return {
-          status: error.response.status,
-          message: error.response.data.message,
-        };
-      }
-    },
-    async passwordEdit({}, userData) {
-      try {
-        const response = await apiClient.post("/auth/password-edit", userData);
-        const data = response.data;
-        return {
-          status: data.status,
-          message: data.message,
-        };
+        return await apiClient.post("/auth/register", userData);
       } catch (error) {
         // console.error("Registration failed:", error); // * debug
         return {
@@ -104,12 +63,29 @@ const store = createStore({
     },
     async passwordReset({}, userData) {
       try {
-        const response = await apiClient.post("/auth/password-reset", userData);
-        const data = response.data;
+        return await apiClient.post("/auth/password-reset", userData);
+      } catch (error) {
+        // console.error("Registration failed:", error); // * debug
         return {
-          status: data.status,
-          message: data.message,
+          status: error.response.status,
+          message: error.response.data.message,
         };
+      }
+    },
+    async accountData({}, userData) {
+      try {
+        return await apiClient.get("/account/profile", userData);
+      } catch (error) {
+        // console.error("Registration failed:", error); // * debug
+        return {
+          status: error.response.status,
+          message: error.response.data.message,
+        };
+      }
+    },
+    async passwordEdit({}, userData) {
+      try {
+        return await apiClient.post("/account/password-change", userData);
       } catch (error) {
         // console.error("Registration failed:", error); // * debug
         return {
@@ -120,9 +96,7 @@ const store = createStore({
     },
     async accountUpdate({}, userData) {
       try {
-        const response = await apiClient.post("/auth/account-update", userData);
-        const data = response.data;
-        console.log(data);
+        return await apiClient.put("/account/profile", userData);
       } catch (error) {
         // console.error("Update failed:", error); // * debug
         return {

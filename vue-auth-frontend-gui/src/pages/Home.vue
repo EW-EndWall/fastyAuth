@@ -1,6 +1,11 @@
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
   name: "Home",
+  computed: {
+    ...mapGetters(["isAuthenticated"]),
+  },
 };
 </script>
 
@@ -27,7 +32,10 @@ export default {
             become members, log in and out of their accounts, and manage their
             accounts.
           </p>
-          <div class="flex flex-row gap-3 justify-center mt-4 items-center">
+          <div
+            class="flex flex-row gap-3 justify-center mt-4 items-center"
+            v-if="!isAuthenticated"
+          >
             <span>
               <router-link
                 to="/auth/login"
