@@ -39,7 +39,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getUser", "getToken"]),
+    ...mapGetters(["getId", "getUserName", "getToken"]),
   },
   mounted() {
     this.userAccountData();
@@ -49,19 +49,27 @@ export default {
 
     async userProfileUpdate() {
       try {
-        await this.accountUpdate({
-          username: this.username,
-          firstName: this.firstName,
-          lastName: this.lastName,
-          email: this.email,
-          birthdate: this.birthdate,
-          phone: this.phone,
-          country: this.country,
-          language: this.language,
-          translationLanguage: this.translationLanguage,
+        const res = await this.accountUpdate({
+          params: {
+            id: this.getId,
+          },
+          data: {
+            username: this.newUsername,
+            firstName: this.newFirstName,
+            lastName: this.newLastName,
+            email: this.newEmail,
+            birthdate: this.newBirthdate,
+            phone: this.newPhone,
+            country: this.newCountry,
+            language: this.newLanguage,
+            translationLanguage: this.newTranslationLanguage,
+          },
         });
-        if (res.status == 200) this.$router.push("/profile");
         this.message = res.data.message;
+
+        setTimeout(() => {
+          this.$router.push(".");
+        }, 1500);
       } catch (error) {
         //console.error("Registration error:", error); // * debug
         this.message = "Server error, please try later.";
@@ -71,8 +79,13 @@ export default {
     async userAccountData() {
       try {
         const res = await this.accountData({
-          username: this.getUser,
-          token: this.getToken,
+          params: {
+            id: this.getId,
+          },
+          data: {
+            username: this.getUserName,
+            token: this.getToken,
+          },
         });
         if (res.message != undefined) this.message = res.data.message;
 

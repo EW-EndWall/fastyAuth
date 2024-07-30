@@ -18,18 +18,22 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getUser"]),
+    ...mapGetters(["getId"]),
   },
   methods: {
     ...mapActions(["passwordEdit"]),
     async userPasswordEdit() {
       try {
-        const res = await this.login({
-          username: getUser,
-          password: this.password,
-          newPassword: this.newPassword,
+        const res = await this.passwordEdit({
+          params: {
+            id: this.getId,
+          },
+          data: {
+            password: this.password,
+            newPassword: this.newPassword,
+          },
         });
-        if (res.status == 200) this.$router.push("/profile");
+        if (res.status == 200) this.$router.push("/account");
         this.message = res.data.message;
       } catch (error) {
         //console.error("Login error:", error); // * debug

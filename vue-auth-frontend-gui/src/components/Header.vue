@@ -7,13 +7,21 @@ export default {
   name: "Header",
   data() {
     return {
-      isOpenDropdown: false,
       darkMode:
         (localStorage?.getItem("theme") == "dark" ? true : false) || false,
     };
   },
   created() {
     this.changleTheme();
+  },
+  mounted() {
+    if (this.darkMode) {
+      document.body.classList.add("dark");
+      document.body.classList.remove("light");
+    } else {
+      document.body.classList.add("light");
+      document.body.classList.remove("dark");
+    }
   },
   methods: {
     toggleThemeDarkMode() {
@@ -23,9 +31,13 @@ export default {
       if (mode == true) {
         // * Dark mode
         localStorage.setItem("theme", "dark");
+        document.body.classList.add("dark");
+        document.body.classList.remove("light");
       } else {
         // * Light mode
         localStorage.setItem("theme", "light");
+        document.body.classList.add("light");
+        document.body.classList.remove("dark");
       }
       this.changleTheme();
     },

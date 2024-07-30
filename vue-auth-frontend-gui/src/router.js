@@ -6,6 +6,7 @@ import PasswordSettings from "./pages/PasswordSettings.vue";
 import PasswordReset from "./pages/PasswordReset.vue";
 import Account from "./pages/Account.vue";
 import AccountSettings from "./pages/AccountSettings.vue";
+// import AccountStatus from "./pages/AccountStatus.vue";
 
 import store from "./store/index.js";
 
@@ -35,6 +36,12 @@ const routes = [
     name: "Account",
     meta: { requiresAuth: true },
   },
+  // {
+  //   path: "/account/status",
+  //   component: AccountStatus,
+  //   name: "AccountStatus",
+  //   meta: { requiresAuth: true },
+  // },
   {
     path: "/account/settings",
     component: AccountSettings,

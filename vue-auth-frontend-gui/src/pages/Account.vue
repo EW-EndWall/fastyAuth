@@ -24,7 +24,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getUser", "getToken"]),
+    ...mapGetters(["getId", "getUserName", "getToken"]),
   },
   mounted() {
     this.userAccountData();
@@ -35,8 +35,13 @@ export default {
     async userAccountData() {
       try {
         const res = await this.accountData({
-          username: this.getUser,
-          token: this.getToken,
+          params: {
+            id: this.getId,
+          },
+          data: {
+            username: this.getUserName,
+            token: this.getToken,
+          },
         });
 
         if (res.status != 200) return (this.message = res.data.message);

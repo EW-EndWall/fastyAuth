@@ -5,13 +5,18 @@ import apiClient from "./../api/axios";
 
 const store = createStore({
   state: {
-    user: localStorage.getItem("user") || null,
+    userId: localStorage.getItem("userId") || null,
+    userName: localStorage.getItem("userName") || null,
     token: localStorage.getItem("token") || null,
   },
   mutations: {
-    setUser(state, user) {
+    setUserId(state, userId) {
+      state.userId = userId;
+      localStorage.setItem("userId", userId);
+    },
+    setUserName(state, user) {
       state.user = user;
-      localStorage.setItem("user", user);
+      localStorage.setItem("userName", user);
     },
     setToken(state, token) {
       state.token = token;
@@ -20,16 +25,18 @@ const store = createStore({
     logout(state) {
       state.isAuthenticated = null;
       state.token = null;
-      localStorage.removeItem("user");
+      localStorage.removeItem("userId");
+      localStorage.removeItem("userName");
       localStorage.removeItem("token");
     },
   },
   actions: {
     async login({ commit }, credentials) {
       try {
-        const response = await apiClient.post("/auth/login", credentials);
+        const response = await apiClient.post(`/auth/login`, credentials);
         const data = response.data;
-        commit("setUser", data.user);
+        commit("setUserId", data.id);
+        commit("setUserName", data.user);
         commit("setToken", data.token);
         apiClient.defaults.headers.common["authorization"] = `${data.token}`;
         return {
@@ -50,9 +57,9 @@ const store = createStore({
       commit("logout");
       router.push("/");
     },
-    async register({}, userData) {
+    async register({}, { data }) {
       try {
-        return await apiClient.post("/auth/register", userData);
+        return await apiClient.post(`/auth/register`, data);
       } catch (error) {
         // console.error("Registration failed:", error); // * debug
         return {
@@ -61,9 +68,9 @@ const store = createStore({
         };
       }
     },
-    async passwordReset({}, userData) {
+    async passwordReset({}, { data }) {
       try {
-        return await apiClient.post("/auth/password-reset", userData);
+        return await apiClient.post(`/auth/password-reset`, data);
       } catch (error) {
         // console.error("Registration failed:", error); // * debug
         return {
@@ -72,9 +79,9 @@ const store = createStore({
         };
       }
     },
-    async accountData({}, userData) {
+    async accountData({}, { params, data }) {
       try {
-        return await apiClient.get("/account/profile", userData);
+        return await apiClient.get(`/account/profile/${params.id}`, data);
       } catch (error) {
         // console.error("Registration failed:", error); // * debug
         return {
@@ -83,9 +90,12 @@ const store = createStore({
         };
       }
     },
-    async passwordEdit({}, userData) {
+    async passwordEdit({}, { params, data }) {
       try {
-        return await apiClient.post("/account/password-change", userData);
+        return await apiClient.patch(
+          `/account/password-change/${params.id}`,
+          data
+        );
       } catch (error) {
         // console.error("Registration failed:", error); // * debug
         return {
@@ -94,9 +104,9 @@ const store = createStore({
         };
       }
     },
-    async accountUpdate({}, userData) {
+    async accountUpdate({}, { params, data }) {
       try {
-        return await apiClient.put("/account/profile", userData);
+        return await apiClient.put(`/account/profile/${params.id}`, data);
       } catch (error) {
         // console.error("Update failed:", error); // * debug
         return {
@@ -105,10 +115,22 @@ const store = createStore({
         };
       }
     },
+    // async accountStatusUpdate({}, { params, data }) {
+    //   try {
+    //     return await apiClient.patch(`/account/profile/status/${params.id}`, data);
+    //   } catch (error) {
+    //     // console.error("Update failed:", error); // * debug
+    //     return {
+    //       status: error.response.status,
+    //       message: error.response.data.message,
+    //     };
+    //   }
+    // },
   },
   getters: {
     isAuthenticated: (state) => !!state.token,
-    getUser: (state) => state.user,
+    getId: (state) => state.userId,
+    getUserName: (state) => state.userName,
     getToken: (state) => state.token,
   },
 });
