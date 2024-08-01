@@ -10,14 +10,20 @@ const apiClient = axios.create({
   },
 });
 
-//   apiClient.interceptors.request.use(
-//     config => {
-//       config.headers['Custom-Header'] = 'CustomValue';
-//       return config;
-//     },
-//     error => {
-//       return Promise.reject(error);
-//     }
-//   );
+// apiClient.interceptors.request.use(
+// config => {
+//   config.headers['Custom-Header'] = 'CustomValue';
+//   return config;
+// },
+// error => {
+//   if (error.response && error.response.status === 400) {
+//     return Promise.reject({
+//       ...error,
+//       message: "Server error, please try again later."
+//     });
+//   }
+//   return Promise.reject(error);
+// }
+// );
 
 export default apiClient;

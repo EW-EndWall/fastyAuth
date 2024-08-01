@@ -2,16 +2,29 @@
 export default {
   name: "ElementButtonRouterLinkMini",
   props: {
-    textName: String,
-    url: String,
+    textName: {
+      type: String,
+      default: "Click Me!",
+    },
+    url: {
+      type: String,
+      default: "/",
+    },
+    class: {
+      type: String,
+      default: "",
+    },
+  },
+  computed: {
+    classes() {
+      return `font-semibold text-xs ${this.class}`;
+    },
   },
 };
 </script>
 
 <template>
-  <div class="flex flex-row justify-around items-center">
-    <router-link :to="url" class="font-semibold text-xs">
-      {{ textName }}
-    </router-link>
-  </div>
+  <router-link :to="url" :class="classes">
+    {{ textName }}
+  </router-link>
 </template>

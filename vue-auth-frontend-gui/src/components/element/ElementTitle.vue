@@ -2,13 +2,23 @@
 export default {
   name: "ElementTitle",
   props: {
-    textName: String,
+    textName: {
+      type: String,
+      default: "Example Title",
+    },
+    class: {
+      type: String,
+      default: "",
+    },
+  },
+  computed: {
+    classes() {
+      return `text-2xl font-bold text-center mb-2 ${this.class}`;
+    },
   },
 };
 </script>
 
 <template>
-  <div>
-    <h1 class="text-2xl font-bold text-center mb-2">{{ textName }}</h1>
-  </div>
+  <h1 :class="classes">{{ textName }}</h1>
 </template>

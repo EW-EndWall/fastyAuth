@@ -28,8 +28,12 @@ export default {
           username: this.username,
           password: this.password,
         });
-        if (res.status == 200) this.$router.push("/account");
-        this.message = res.message;
+
+        this.message = res?.data?.message;
+
+        setTimeout(() => {
+          if (res.status == 200) this.$router.push("/account");
+        }, 1500);
       } catch (error) {
         //console.error("Login error:", error); // * debug
         this.message = "Server error, please try later.";

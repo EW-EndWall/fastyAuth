@@ -15,7 +15,7 @@ const store = createStore({
       localStorage.setItem("userId", userId);
     },
     setUserName(state, user) {
-      state.user = user;
+      state.userName = user;
       localStorage.setItem("userName", user);
     },
     setToken(state, token) {

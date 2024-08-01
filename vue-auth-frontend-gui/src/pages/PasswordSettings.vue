@@ -1,7 +1,8 @@
 <script setup>
 import componentElementTitle from "../components/element/ElementTitle.vue";
-import componentButton from "../components/element/ElementButton.vue";
 import componentInputPassword from "../components/input/InputPassword.vue";
+import componentButton from "../components/element/ElementButton.vue";
+import componentElementButtonRouterLink from "../components/element/ElementButtonRouterLink.vue";
 </script>
 
 <script>
@@ -33,8 +34,12 @@ export default {
             newPassword: this.newPassword,
           },
         });
-        if (res.status == 200) this.$router.push("/account");
-        this.message = res.data.message;
+
+        this.message = res?.data?.message;
+
+        setTimeout(() => {
+          if (res.status == 200) this.$router.push("/account");
+        }, 1500);
       } catch (error) {
         //console.error("Login error:", error); // * debug
         this.message = "Server error, please try later.";
@@ -70,8 +75,16 @@ export default {
         :required="true"
         v-model:valueData="newPassword"
       />
-
-      <componentButton :textName="'Save'" />
+      <div
+        class="flex sm:flex-row flex-col gap-3 justify-around mt-4 items-center"
+      >
+        <componentElementButtonRouterLink
+          :url="'./'"
+          :textName="'Back'"
+          :class="'w-full block'"
+        />
+        <componentButton :textName="'Save'" :class="'w-full block'" />
+      </div>
     </form>
   </div>
 </template>

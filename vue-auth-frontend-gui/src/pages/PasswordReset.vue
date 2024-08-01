@@ -37,8 +37,11 @@ export default {
           return;
         }
 
-        if (res.status == 200) this.$router.push("/");
-        this.message = res.data.message;
+        this.message = res?.data?.message;
+
+        setTimeout(() => {
+          if (res.status == 200) this.$router.push("/");
+        }, 1500);
       } catch (error) {
         // console.error("Registration error:", error); // * debug
         this.message = "Server error, please try later.";

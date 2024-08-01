@@ -73,23 +73,73 @@ export default {
       {{ message }}
     </div>
     <div class="flex flex-col w-3/4 mx-auto gap-3" v-if="!message">
-      <span> User Name: {{ username }} </span>
-      <span> First Name:: {{ firstName }} </span>
-      <span> Last Name: {{ lastName }} </span>
-      <span> Email: {{ email }} </span>
-      <span> Birthdate: {{ birthdate }} </span>
-      <span> Phone: {{ phone }} </span>
-      <span> Country: {{ country }} </span>
-      <span> Language: {{ language }} </span>
-      <span> Translation Language: {{ translationLanguage }} </span>
+      <div
+        class="flex sm:flex-row flex-col justify-between gap-2 sm:border-0 border-y-2 p-2"
+      >
+        <span> User Name: </span>
+        <span>{{ username }}</span>
+      </div>
+      <div
+        class="flex sm:flex-row flex-col justify-between gap-2 sm:border-0 border-y-2 p-2"
+      >
+        <span> First Name:: </span>
+        <span>{{ firstName }}</span>
+      </div>
+      <div
+        class="flex sm:flex-row flex-col justify-between gap-2 sm:border-0 border-y-2 p-2"
+      >
+        <span> Last Name: </span>
+        <span>{{ lastName }}</span>
+      </div>
+      <div
+        class="flex sm:flex-row flex-col justify-between gap-2 sm:border-0 border-y-2 p-2"
+      >
+        <span> Email: </span>
+        <span>{{ email }}</span>
+      </div>
+      <div
+        class="flex sm:flex-row flex-col justify-between gap-2 sm:border-0 border-y-2 p-2"
+      >
+        <span> Birthdate: </span>
+        <span>{{ birthdate }}</span>
+      </div>
+      <div
+        class="flex sm:flex-row flex-col justify-between gap-2 sm:border-0 border-y-2 p-2"
+      >
+        <span> Phone: </span>
+        <span>{{ phone }}</span>
+      </div>
+      <div
+        class="flex sm:flex-row flex-col justify-between gap-2 sm:border-0 border-y-2 p-2"
+      >
+        <span> Country: </span> <span>{{ country }}</span>
+      </div>
+      <div
+        class="flex sm:flex-row flex-col justify-between gap-2 sm:border-0 border-y-2 p-2"
+      >
+        <span> Language: </span>
+        <span>{{ language }}</span>
+      </div>
+      <div
+        class="flex sm:flex-row flex-col justify-between gap-2 sm:border-0 border-y-2 p-2"
+      >
+        <span> Translation Language: </span>
+        <span>{{ translationLanguage }}</span>
+      </div>
 
-      <div class="flex flex-row gap-3 justify-around mt-4 items-center">
-        <span>
-          <componentElementButtonRouterLink
-            :url="'/account/settings'"
-            :textName="'Account settings'"
-          />
-        </span>
+      <div
+        class="flex sm:flex-row flex-col gap-3 justify-around mt-4 items-center"
+      >
+        <componentElementButtonRouterLink
+          :url="'/account/settings'"
+          :textName="'Account settings'"
+          :class="'w-full block'"
+        />
+        <componentElementButtonRouterLink
+          :url="'/account/password-settings'"
+          :textName="'Password settings'"
+          :class="'w-full block'"
+        />
       </div>
     </div>
   </div>

@@ -35,22 +35,28 @@ export default {
     async userRegister() {
       try {
         const res = await this.register({
-          username: this.username,
-          firstName: this.firstName,
-          lastName: this.lastName,
-          email: this.email,
-          birthdate: this.birthdate,
-          phone: this.phone,
-          country: this.country,
-          language: this.language,
-          translationLanguage: this.translationLanguage,
-          password: this.password,
+          data: {
+            username: this.username,
+            firstName: this.firstName,
+            lastName: this.lastName,
+            email: this.email,
+            birthdate: this.birthdate,
+            phone: this.phone,
+            country: this.country,
+            language: this.language,
+            translationLanguage: this.translationLanguage,
+            password: this.password,
+          },
         });
-        if (res.status == 200) this.$router.push("/");
-        this.message = res.data.message;
+
+        this.message = res?.data?.message;
+
+        setTimeout(() => {
+          if (res.status == 200) this.$router.push("/");
+        }, 1500);
       } catch (error) {
         // console.error("Registration error:", error); // * debug
-        this.message = "Server error, please try later.";
+        this.message = "Server error, please try laterr.";
       }
     },
   },

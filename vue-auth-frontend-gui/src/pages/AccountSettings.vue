@@ -65,7 +65,8 @@ export default {
             translationLanguage: this.newTranslationLanguage,
           },
         });
-        this.message = res.data.message;
+
+        this.message = res?.data?.message;
 
         setTimeout(() => {
           this.$router.push(".");
@@ -183,13 +184,15 @@ export default {
         :placeholder="translationLanguage"
         v-model:valueData="newTranslationLanguage"
       />
-      <div class="flex flex-row gap-3 justify-around mt-4 items-center">
-        <span>
-          <componentElementButtonRouterLink :url="'../'" :textName="'Back'" />
-        </span>
-        <span>
-          <componentButton :textName="'Save'" />
-        </span>
+      <div
+        class="flex sm:flex-row flex-col gap-3 justify-around mt-4 items-center"
+      >
+        <componentElementButtonRouterLink
+          :url="'./'"
+          :textName="'Back'"
+          :class="'w-full block'"
+        />
+        <componentButton :textName="'Save'" :class="'w-full block'" />
       </div>
     </form>
   </div>
