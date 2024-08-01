@@ -43,7 +43,7 @@ export default {
           if (res.status == 200) this.$router.push("/");
         }, 1500);
       } catch (error) {
-        // console.error("Registration error:", error); // * debug
+        // console.error(`Component "${this.$options.name}" error:`, error); // * debug
         this.message = "Server error, please try later.";
       }
     },

@@ -46,7 +46,7 @@ const store = createStore({
           },
         };
       } catch (error) {
-        // console.error("Login failed:", error); // * debug
+        // console.error("login failed:", error); // * debug
         return {
           status: error.response.status,
           message: error.response.data.message,
@@ -61,7 +61,7 @@ const store = createStore({
       try {
         return await apiClient.post(`/auth/register`, data);
       } catch (error) {
-        // console.error("Registration failed:", error); // * debug
+        // console.error("register failed:", error); // * debug
         return {
           status: error.response.status,
           message: error.response.data.message,
@@ -72,7 +72,7 @@ const store = createStore({
       try {
         return await apiClient.post(`/auth/password-reset`, data);
       } catch (error) {
-        // console.error("Registration failed:", error); // * debug
+        // console.error("passwordReset failed:", error); // * debug
         return {
           status: error.response.status,
           message: error.response.data.message,
@@ -83,7 +83,7 @@ const store = createStore({
       try {
         return await apiClient.get(`/account/profile/${params.id}`, data);
       } catch (error) {
-        // console.error("Registration failed:", error); // * debug
+        // console.error("accountData failed:", error); // * debug
         return {
           status: error.response.status,
           message: error.response.data.message,
@@ -97,7 +97,7 @@ const store = createStore({
           data
         );
       } catch (error) {
-        // console.error("Registration failed:", error); // * debug
+        // console.error("passwordEdit failed:", error); // * debug
         return {
           status: error.response.status,
           message: error.response.data.message,
@@ -108,7 +108,7 @@ const store = createStore({
       try {
         return await apiClient.put(`/account/profile/${params.id}`, data);
       } catch (error) {
-        // console.error("Update failed:", error); // * debug
+        // console.error("accountUpdate failed:", error); // * debug
         return {
           status: error.response.status,
           message: error.response.data.message,
@@ -119,7 +119,7 @@ const store = createStore({
     //   try {
     //     return await apiClient.patch(`/account/profile/status/${params.id}`, data);
     //   } catch (error) {
-    //     // console.error("Update failed:", error); // * debug
+    //     // console.error("accountStatusUpdate failed:", error); // * debug
     //     return {
     //       status: error.response.status,
     //       message: error.response.data.message,

@@ -35,7 +35,7 @@ export default {
           if (res.status == 200) this.$router.push("/account");
         }, 1500);
       } catch (error) {
-        //console.error("Login error:", error); // * debug
+        // console.error(`Component "${this.$options.name}" error:`, error); // * debug
         this.message = "Server error, please try later.";
       }
     },

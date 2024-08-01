@@ -56,7 +56,7 @@ export default {
         this.language = res.data.language;
         this.translationLanguage = res.data.translationLanguage;
       } catch (error) {
-        //console.error("Login error:", error); // * debug
+        // console.error(`Component "${this.$options.name}" error:`, error); // * debug
         this.message = "Server error, please try later.";
       }
     },
