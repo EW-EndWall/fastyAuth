@@ -1,0 +1,165 @@
+{
+  "page": {
+    "account": {
+      "title": "Account",
+      "list": {
+        "userId": "User Id:",
+        "userName": "User Name:",
+        "email": "Email:",
+        "phone": "Phone:",
+        "firstName": "First Name:",
+        "lastName": "Last Name:",
+        "birthdate": "Birthdate:",
+        "country": "Country:",
+        "language": "Language:",
+        "translationLanguage": "Translation Language:",
+        "accountStatus": "Account Status:",
+        "accountSystemStatus": "Account System Status:",
+        "accountCreated": "Account Created:"
+      },
+      "button": {
+        "accountVerify": "Account Verify",
+        "accountSettings": "Account settings",
+        "passwordSettings": "Password settings",
+        "statusSettings": "Status settings",
+        "accountDelete": "Account delete"
+      }
+    },
+    "accountDelete": {
+      "title": "Account Delete",
+      "input": {
+        "password": "Password"
+      },
+      "button": {
+        "confirm": "Confirm"
+      }
+    },
+    "accountSettings": {
+      "title": "Profile Update",
+      "input": {
+        "userName": "User Name",
+        "email": "Email",
+        "phone": "Phone",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "birthdate": "Birthdate",
+        "country": "Country",
+        "language": "Language",
+        "translationLanguage": "Translation Language"
+      },
+      "button": {
+        "back": "Back",
+        "save": "Save"
+      }
+    },
+    "accountStatus": {
+      "title": "Status Settings",
+      "input": {
+        "accountStatus": "Account Status"
+      },
+      "list": {
+        "active": "Active",
+        "passive": "Passive"
+      },
+      "button": {
+        "back": "Back",
+        "confirm": "Confirm"
+      }
+    },
+    "accountVerify": {
+      "title": "Account Verify",
+      "input": {
+        "verifyType": "Verify Type",
+        "verifyCode": "Verify Code"
+      },
+      "list": {
+        "email": "Email",
+        "phone": "Phone"
+      },
+      "button": {
+        "getCode": "Get Code",
+        "back": "Back",
+        "confirm": "Confirm"
+      }
+    },
+    "home": {
+      "title": "fastiyAuth",
+      "content": "This project is an account management application where users can become members, log in and out of their accounts, and manage their accounts.",
+      "button": {
+        "login": "Login",
+        "register": "Register"
+      }
+    },
+    "login": {
+      "title": "Login",
+      "input": {
+        "userName": "User Name",
+        "password": "Password",
+        "rememberMe": "Remember me"
+      },
+      "button": {
+        "login": "Login",
+        "register": "Register",
+        "passwordReset": "Password Reset"
+      }
+    },
+    "passwordSettings": {
+      "title": "Password Settings",
+      "input": {
+        "password": "Password",
+        "newPassword": "New Password"
+      },
+      "button": {
+        "back": "Back",
+        "save": "Save"
+      }
+    },
+    "register": {
+      "title": "Register",
+      "input": {
+        "userName": "User Name",
+        "password": "Password",
+        "email": "Email",
+        "phone": "Phone",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "birthdate": "Birthdate",
+        "country": "Country",
+        "language": "Language",
+        "translationLanguage": "Translation Language"
+      },
+      "button": {
+        "register": "Register",
+        "login": "Login"
+      }
+    },
+    "resetPassword": {
+      "title": "Password Reset",
+      "input": {
+        "email": "Email",
+        "phone": "Phone",
+        "verifyCode": "Verify Code",
+        "password": "Password"
+      },
+      "button": {
+        "emailPhone": "Email / Phone",
+        "getResetCode": "Get Reset Code",
+        "back": "Back",
+        "reset": "Reset"
+      }
+    }
+  },
+  "component": {
+    "header": {
+      "title": "fastiyAuth",
+      "menu": {
+        "home": "Home",
+        "login": "Login",
+        "register": "Register",
+        "account": "Account",
+        "logout": "Logout"
+      }
+    }
+  },
+  "serverError": "Server error, please try later."
+}

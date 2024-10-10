@@ -1,0 +1,191 @@
+{
+  "auth": {
+    "login": {
+      "success": "Login successful.",
+      "invalidCredentials": "Incorrect password.",
+      "notFound": "User not found."
+    },
+    "register": {
+      "success": "Registration successful.",
+      "userExist": "Username already exists.",
+      "emailExist": "Email already exists."
+    },
+    "resetPassword": {
+      "success": "Password reset code sent.",
+      "fail": "User information is incorrect."
+    },
+    "resetPasswordUpdate": {
+      "success": "Password reset successfully.",
+      "fail": "User information is incorrect."
+    }
+  },
+  "account": {
+    "profile": {
+      "notFound": "User not found.",
+      "invalidToken": "Invalid or expired token."
+    },
+    "update": {
+      "success": "The update was successful."
+    },
+    "updatePassword": {
+      "success": "Password updated."
+    },
+    "accountStatus": {
+      "success": "Account status updated."
+    },
+    "verify": {
+      "send": "Verification code has been sent.",
+      "success": "Verification successful.",
+      "fail": "The approval type or code is incorrect."
+    },
+    "delete": {
+      "success": "The user deletion process has been completed successfully."
+    }
+  },
+  "user": {
+    "validation": {
+      "username": {
+        "required": "Username is required.",
+        "base": "Username must contain only letters and numbers.",
+        "empty": "Username cannot be empty.",
+        "min": "The username must be at least {{limit}} characters long.",
+        "max": "The username cannot be more than {{limit}} characters long."
+      },
+      "password": {
+        "required": "Password is required.",
+        "base": "Password must be in text type.",
+        "empty": "Password cannot be empty."
+      },
+      "newPassword": {
+        "required": "Password is required.",
+        "base": "Password must be in text type.",
+        "empty": "Password cannot be empty.",
+        "min": "The password must be at least {{limit}} characters long.",
+        "pattern": "The password must contain at least one uppercase and lowercase letter, number, and special character."
+      },
+      "firstName": {
+        "required": "Name is required.",
+        "base": "Name must be in text type.",
+        "empty": "Name cannot be empty.",
+        "pattern": "The name must consist of letters only."
+      },
+      "lastName": {
+        "required": "Surname is required.",
+        "base": "Surname must be in text type.",
+        "empty": "Surname cannot be empty.",
+        "pattern": "The surname must consist of letters only."
+      },
+      "birthdate": {
+        "required": "Birthdate is required.",
+        "base": "Date of birth must be in date type.",
+        "empty": "Birthdate cannot be empty.",
+        "min": "The birthdate cannot be older than {{limit}}."
+      },
+      "email": {
+        "required": "Email is required.",
+        "base": "Please enter a valid email address.",
+        "empty": "Email cannot be empty."
+      },
+      "phone": {
+        "required": "Phone number is required.",
+        "base": "Phone number must be in text type.",
+        "empty": "The phone number cannot be empty.",
+        "min": "The phone number must be at least {{limit}} characters long.",
+        "max": "The phone number cannot be more than {{limit}} characters long.",
+        "pattern": "The phone number must contain only numbers."
+      },
+      "country": {
+        "required": "Country is required.",
+        "base": "Country must be in text type.",
+        "empty": "Country cannot be empty.",
+        "pattern": "The country must consist of letters only."
+      },
+      "language": {
+        "required": "Language is required.",
+        "base": "Language must be in text type.",
+        "empty": "Language cannot be empty.",
+        "min": "The language must be at least {{limit}} characters long.",
+        "max": "The language cannot be more than {{limit}} characters long.",
+        "pattern": "The language must consist of letters and _ only."
+      },
+      "translationLanguage": {
+        "required": "Language translation is required.",
+        "base": "Language translation must be in text type.",
+        "empty": "Language translation cannot be empty.",
+        "min": "The language translation must be at least {{limit}} characters long.",
+        "max": "The language translation cannot be more than {{limit}} characters long.",
+        "pattern": "The language translation must consist of letters and _ only."
+      },
+      "status": {
+        "accountStatus": {
+          "required": "Account status is required.",
+          "base": "Account status must be in text type.",
+          "empty": "Account status cannot be empty.",
+          "pattern": "The account status should only consist of active or passive."
+        },
+        "systemStatus": {
+          "required": "System status is required.",
+          "base": "System status must be in text type.",
+          "empty": "System status cannot be empty.",
+          "pattern": "The system status should only consist of active, suspended, banned or deleted."
+        }
+      },
+      "verify": {
+        "verificationType": {
+          "required": "Approval type is required.",
+          "base": "Approval type must be in text type.",
+          "empty": "Approval type cannot be empty.",
+          "pattern": "Approval type should only consist of email or phone."
+        },
+        "verifyCode": {
+          "required": "Verification code is required.",
+          "base": "Verification code must be in text type.",
+          "empty": "Verification code cannot be empty.",
+          "min": "The verification code must be at least {{limit}} characters long.",
+          "max": "The verification code cannot be more than {{limit}} characters long."
+        }
+      },
+      "rememberMe": {
+        "required": "Remember me is required.",
+        "base": "Remember me must be of type Boolean.",
+        "empty": "Remember me cannot be empty."
+      }
+    }
+  },
+  "mail": {
+    "verificationEmail": {
+      "content": {
+        "subject": "Email Verification",
+        "text": "Hello, your email verification code",
+        "html": "Your email verification code"
+      }
+    },
+    "resetPasswordEmail": {
+      "content": {
+        "subject": "Password Reset",
+        "text": "Hello, your password reset code",
+        "html": "Your password reset code"
+      }
+    },
+    "resetPasswordUpdateEmail": {
+      "content": {
+        "subject": "Your Password Has Been Reset Successfully!",
+        "text": "Your password reset has been completed successfully.",
+        "html": "Your password reset has been completed successfully."
+      }
+    }
+  },
+  "pageError": {
+    "deleteProfileHandler": "Account deletion failed",
+    "profileHandler": "Account information submission failed",
+    "updatePasswordHandler": "Password update failed",
+    "updateProfileHandler": "Profile update failed",
+    "updateStatusHandler": "User account status update failed",
+    "updateVerifyHandler": "Verify failed",
+    "verifyHandler": "Create verify code failed",
+    "loginHandler": "Login failed",
+    "registerHandler": "Registration failed",
+    "resetPasswordHandler": "Create reset password code failed",
+    "resetPasswordUpdateHandler": "Reset password failed"
+  }
+}

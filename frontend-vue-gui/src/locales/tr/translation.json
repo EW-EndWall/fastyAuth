@@ -1,0 +1,165 @@
+{
+  "page": {
+    "account": {
+      "title": "Hesap",
+      "list": {
+        "userId": "Kullanıcı kimliği:",
+        "userName": "Kullanıcı adı:",
+        "email": "E-posta:",
+        "phone": "Telefon:",
+        "firstName": "İlk ad:",
+        "lastName": "Soy isim:",
+        "birthdate": "Doğum tarihi:",
+        "country": "Ülke:",
+        "language": "Dil:",
+        "translationLanguage": "Çeviri Dili:",
+        "accountStatus": "Hesap Durumu:",
+        "accountSystemStatus": "Hesap Sistem Durumu:",
+        "accountCreated": "Hesap Oluşturuldu:"
+      },
+      "button": {
+        "accountVerify": "Hesap Doğrulama",
+        "accountSettings": "Hesap ayarları",
+        "passwordSettings": "Şifre ayarları",
+        "statusSettings": "Durum ayarları",
+        "accountDelete": "Hesap silme"
+      }
+    },
+    "accountDelete": {
+      "title": "Hesap Silme",
+      "input": {
+        "password": "Şifre"
+      },
+      "button": {
+        "confirm": "Onayla"
+      }
+    },
+    "accountSettings": {
+      "title": "Profil Güncellemesi",
+      "input": {
+        "userName": "Kullanıcı adı",
+        "email": "E-posta",
+        "phone": "Telefon",
+        "firstName": "İlk ad",
+        "lastName": "Soy isim",
+        "birthdate": "Doğum tarihi",
+        "country": "Ülke",
+        "language": "Dil",
+        "translationLanguage": "Çeviri Dili"
+      },
+      "button": {
+        "back": "Geri",
+        "save": "Kaydet"
+      }
+    },
+    "accountStatus": {
+      "title": "Durum Ayarları",
+      "input": {
+        "accountStatus": "Hesap Durumu"
+      },
+      "list": {
+        "active": "Aktif",
+        "passive": "Pasif"
+      },
+      "button": {
+        "back": "Geri",
+        "confirm": "Onayla"
+      }
+    },
+    "accountVerify": {
+      "title": "Hesap Doğrulama",
+      "input": {
+        "verifyType": "Doğrulama Türü",
+        "verifyCode": "Doğrulama Kodu"
+      },
+      "list": {
+        "email": "E-posta",
+        "phone": "Telefon"
+      },
+      "button": {
+        "getCode": "Kodu Al",
+        "back": "Geri",
+        "confirm": "Onayla"
+      }
+    },
+    "home": {
+      "title": "fastiyAuth",
+      "content": "Bu proje kullanıcıların üye olabileceği, hesaplarına giriş-çıkış yapabileceği ve hesaplarını yönetebileceği bir hesap yönetim uygulamasıdır.",
+      "button": {
+        "login": "Giriş yap",
+        "register": "Kayıt ol"
+      }
+    },
+    "login": {
+      "title": "Giriş",
+      "input": {
+        "userName": "Kullanıcı adı",
+        "password": "Şifre",
+        "rememberMe": "Beni Hatırla"
+      },
+      "button": {
+        "login": "Giriş yap",
+        "register": "Kayıt ol",
+        "passwordReset": "Şifre Sıfırlama"
+      }
+    },
+    "passwordSettings": {
+      "title": "Şifre Ayarları",
+      "input": {
+        "password": "Şifre",
+        "newPassword": "Yeni Şifre"
+      },
+      "button": {
+        "back": "Geri",
+        "save": "Kaydet"
+      }
+    },
+    "register": {
+      "title": "Kayıt ol",
+      "input": {
+        "userName": "Kullanıcı adı",
+        "password": "Şifre",
+        "email": "E-posta",
+        "phone": "Telefon",
+        "firstName": "İlk ad",
+        "lastName": "Soy isim",
+        "birthdate": "Doğum tarihi",
+        "country": "Ülke",
+        "language": "Dil",
+        "translationLanguage": "Çeviri Dili"
+      },
+      "button": {
+        "register": "Kayıt ol",
+        "login": "Giriş yap"
+      }
+    },
+    "resetPassword": {
+      "title": "Şifre Sıfırlama",
+      "input": {
+        "email": "E-posta",
+        "phone": "Telefon",
+        "verifyCode": "Doğrulama Kodu",
+        "password": "Şifre"
+      },
+      "button": {
+        "emailPhone": "E-posta / Telefon",
+        "getResetCode": "Sıfırlama Kodunu Al",
+        "back": "Geri",
+        "reset": "Sıfırla"
+      }
+    }
+  },
+  "component": {
+    "header": {
+      "title": "fastiyAuth",
+      "menu": {
+        "home": "Ana Sayfa",
+        "login": "Giriş",
+        "register": "Kayıt Ol",
+        "account": "Hesap",
+        "logout": "Çıkış Yap"
+      }
+    }
+  },
+  "serverError": "Sunucu hatası, lütfen daha sonra tekrar deneyin."
+}

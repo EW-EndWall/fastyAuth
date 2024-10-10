@@ -1,0 +1,191 @@
+{
+  "auth": {
+    "login": {
+      "success": "Giriş başarılı.",
+      "invalidCredentials": "Hatalı şifre.",
+      "notFound": "Kullanıcı bulunamadı."
+    },
+    "register": {
+      "success": "Kayıt başarılı.",
+      "userExist": "Kullanıcı adı zaten mevcut.",
+      "emailExist": "E-posta zaten mevcut."
+    },
+    "resetPassword": {
+      "success": "Şifre sıfırlama kodu gönderildi.",
+      "fail": "Kullanıcı bilgileri hatalı."
+    },
+    "resetPasswordUpdate": {
+      "success": "Şifre başarıyla sıfırlandı.",
+      "fail": "Kullanıcı bilgileri hatalı."
+    }
+  },
+  "account": {
+    "profile": {
+      "notFound": "Kullanıcı bulunamadı.",
+      "invalidToken": "Geçersiz veya süresi dolmuş token."
+    },
+    "update": {
+      "success": "Güncelleme başarılı."
+    },
+    "updatePassword": {
+      "success": "Şifre güncellendi."
+    },
+    "accountStatus": {
+      "success": "Hesap durumu güncellendi."
+    },
+    "verify": {
+      "send": "Doğrulama kodu gönderildi.",
+      "success": "Doğrulama işlemi başarılı.",
+      "fail": "Onay tipi veya kodu hatalı."
+    },
+    "delete": {
+      "success": "Kullanıcı silme işlemi başarıyla tamamlandı."
+    }
+  },
+  "user": {
+    "validation": {
+      "username": {
+        "required": "Kullanıcı adı gereklidir.",
+        "base": "Kullanıcı adı sadece harf ve rakamlardan oluşmalıdır.",
+        "empty": "Kullanıcı adı boş bırakılamaz.",
+        "min": "Kullanıcı adı en az {{limit}} karakter olmalıdır.",
+        "max": "Kullanıcı adı en fazla {{limit}} karakter olabilir."
+      },
+      "password": {
+        "required": "Şifre gereklidir.",
+        "base": "Şifre metin türünde olmalıdır.",
+        "empty": "Şifre boş bırakılamaz."
+      },
+      "newPassword": {
+        "required": "Şifre gereklidir.",
+        "base": "Şifre metin türünde olmalıdır.",
+        "empty": "Şifre boş bırakılamaz.",
+        "min": "Şifre en az {{limit}} karakter olmalıdır.",
+        "pattern": "Şifre en az bir büyük ve kücük harf, rakam, özel karakter içermelidir."
+      },
+      "firstName": {
+        "required": "İsim gereklidir.",
+        "base": "İsim metin türünde olmalıdır.",
+        "empty": "İsim boş bırakılamaz.",
+        "pattern": "İsim yalnızca harflerden oluşmalıdır."
+      },
+      "lastName": {
+        "required": "Soyadı gereklidir.",
+        "base": "Soyadı metin türünde olmalıdır.",
+        "empty": "Soyadı boş bırakılamaz.",
+        "pattern": "Soyadı yalnızca harflerden oluşmalıdır."
+      },
+      "birthdate": {
+        "required": "Doğum tarihi gereklidir.",
+        "base": "Doğum tarihi date türünde olmalıdır.",
+        "empty": "Doğum tarihi boş bırakılamaz.",
+        "min": "Tarih {{limit}} 'den eski olamaz."
+      },
+      "email": {
+        "required": "Email adresi gereklidir.",
+        "base": "Geçerli bir email adresi girin.",
+        "empty": "Email boş bırakılamaz."
+      },
+      "phone": {
+        "required": "Telefon numarası gereklidir.",
+        "base": "Telefon numarası metin türünde olmalıdır.",
+        "empty": "Telefon numarası boş bırakılamaz.",
+        "min": "Telefon numarası en az {{limit}} karakter olmalıdır.",
+        "max": "Telefon numarası en fazla {{limit}} karakter olabilir.",
+        "pattern": "Telefon numarası yalnızca rakamlardan oluşmalıdır."
+      },
+      "country": {
+        "required": "Ülke gereklidir.",
+        "base": "Ülke metin türünde olmalıdır.",
+        "empty": "Ülke boş bırakılamaz.",
+        "pattern": "Ülke yalnızca harflerden oluşmalıdır."
+      },
+      "language": {
+        "required": "Dil gereklidir.",
+        "base": "Dil metin türünde olmalıdır.",
+        "empty": "Dil boş bırakılamaz.",
+        "min": "Dil en az {{limit}} karakter olmalıdır.",
+        "max": "Dil en fazla {{limit}} karakter olabilir.",
+        "pattern": "Dil sadece harfler ve _ oluşmalıdır."
+      },
+      "translationLanguage": {
+        "required": "Çeviri dili gereklidir.",
+        "base": "Çeviri dili metin türünde olmalıdır.",
+        "empty": "Çeviri dili boş bırakılamaz.",
+        "min": "Çeviri dili en az {{limit}} karakter olmalıdır.",
+        "max": "Çeviri dili en fazla {{limit}} karakter olabilir.",
+        "pattern": "Çeviri dili sadece harfler ve _ oluşmalıdır."
+      },
+      "status": {
+        "accountStatus": {
+          "required": "Hesap durumu gereklidir.",
+          "base": "Hesap durumu metin türünde olmalıdır.",
+          "empty": "Hesap durumu boş bırakılamaz.",
+          "pattern": "Hesap durumu sadece active veya passive oluşmalıdır."
+        },
+        "systemStatus": {
+          "required": "Sistem durumu gereklidir.",
+          "base": "Sistem durumu metin türünde olmalıdır.",
+          "empty": "Sistem durumu boş bırakılamaz.",
+          "pattern": "Sistem durumu sadece active, suspended, banned veya deleted oluşmalıdır."
+        }
+      },
+      "verifyCode": {
+        "verificationType": {
+          "required": "Onay tipi gereklidir.",
+          "base": "Onay tipi metin türünde olmalıdır.",
+          "empty": "Onay tipi boş bırakılamaz.",
+          "pattern": "Onay tipi sadece email veya phone oluşmalıdır."
+        },
+        "verifyCode": {
+          "required": "Onay kodu gereklidir.",
+          "base": "Onay kodu metin türünde olmalıdır.",
+          "empty": "Onay kodu boş bırakılamaz.",
+          "min": " Onay kodu en az {{limit}} karakter olmalıdır.",
+          "max": "Onay kodu en fazla {{limit}} karakter olabilir."
+        }
+      },
+      "rememberMe": {
+        "required": "Beni hatırla gereklidir.",
+        "base": "Beni hatırla Boolean türünde olmalıdır.",
+        "empty": "Beni hatırla boş bırakılamaz."
+      }
+    }
+  },
+  "mail": {
+    "verificationEmail": {
+      "content": {
+        "subject": "E-posta Doğrulama",
+        "text": "Merhaba, e-posta doğrulama kodunuz",
+        "html": "E-posta doğrulama kodunuz"
+      }
+    },
+    "resetPasswordEmail": {
+      "content": {
+        "subject": "Şifre Sıfırlama",
+        "text": "Merhaba, şifre sıfırlama kodunuz",
+        "html": "Şifre sıfırlama kodunuz"
+      }
+    },
+    "resetPasswordUpdateEmail": {
+      "content": {
+        "subject": "Şifreniz Başarıyla Sıfırlandı!",
+        "text": "Şifre sıfırlama işleminiz başarıyla gerçekleşmiştir.",
+        "html": "Şifre sıfırlama işleminiz başarıyla gerçekleşmiştir."
+      }
+    }
+  },
+  "pageError": {
+    "deleteProfileHandler": "Hesap silme işlemi başarısız oldu",
+    "profileHandler": "Hesap bilgisi gönderimi başarısız oldu",
+    "updatePasswordHandler": "Şifre güncellemesi başarısız oldu",
+    "updateProfileHandler": "Profil güncellemesi başarısız oldu",
+    "updateStatusHandler": "Kullanıcı hesabı durum güncellemesi başarısız oldu",
+    "updateVerifyHandler": "Doğrulama başarısız oldu",
+    "verifyHandler": "Doğrulama kodu oluşturma başarısız oldu",
+    "loginHandler": "Giriş başarısız oldu",
+    "registerHandler": "Kayıt başarısız oldu",
+    "resetPasswordHandler": "Şifre sıfırlama kodu oluşturma başarısız oldu",
+    "resetPasswordUpdateHandler": "Şifre sıfırlama başarısız oldu"
+  }
+}
