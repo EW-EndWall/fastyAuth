@@ -55,6 +55,7 @@ This API provides endpoints for user registration, login, and profile management
 - Dark mode (dark, light)
 
 </br>
+
 - Server fastify
 - Database MongoDB
 - Validation Joi mongoose fastify
